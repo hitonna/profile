@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SRのプロフィール</title>
+  <!-- 配布されたCDNの2行 -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-base-200 min-h-screen text-base-content flex flex-col">
+
+  <!-- ナビバー（右上に各項目へのジャンプボタン） -->
+  <header class="navbar bg-base-100 shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a class="btn btn-ghost text-xl font-bold px-0 sm:px-4">SRのプロフィール</a>
+      <!-- 右上のボタンナビゲーション -->
+      <nav class="flex gap-1 sm:gap-2">
+        <a href="#hero" class="btn btn-sm btn-ghost">ひとこと</a>
+        <a href="#likes" class="btn btn-sm btn-ghost">好きなもの</a>
+        <a href="#learning" class="btn btn-sm btn-ghost">学び</a>
+        <a href="#works" class="btn btn-sm btn-ghost">作品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 max-w-4xl flex-grow space-y-10">
+
+    <!-- 1. ひとこと (Hero) -->
+    <section id="hero" class="hero bg-base-100 rounded-box shadow-sm py-8 px-4 text-center scroll-mt-20">
+      <div class="hero-content flex-col items-center">
+        <!-- イニシャルのアバター (丸型) -->
+        <div class="avatar placeholder">
+          <div class="bg-primary text-primary-content rounded-full w-20 h-20 flex items-center justify-center text-3xl font-bold">
+            <span>SR</span>
+          </div>
+        </div>
+        <h1 class="text-3xl font-bold mt-2">SR</h1>
+        
+        <!-- LINE風メッセージ（アイコンに向かう上向き矢印付き・時間表示なし） -->
+        <div class="relative mt-2">
+          <!-- 上のアバターに向く三角形の矢印 -->
+          <div class="w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-[#06C755] mx-auto"></div>
+          <!-- 吹き出し本体 -->
+          <div class="bg-[#06C755] text-white font-medium text-base px-5 py-3 rounded-2xl shadow-sm">
+            授業難しいけど頑張ります！
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 好きなもの (Card 3枚) -->
+    <section id="likes" class="scroll-mt-20">
+      <h2 class="text-2xl font-bold mb-4 px-1">好きなもの</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- ラーメン -->
+        <div class="card card-border bg-base-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🍜 ラーメン</h3>
+            <p class="text-sm text-base-content/70">こってり系からあっさり系まで、美味しいお店を開拓するのが好きです。</p>
+          </div>
+        </div>
+        <!-- ミカン -->
+        <div class="card card-border bg-base-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🍊 ミカン</h3>
+            <p class="text-sm text-base-content/70">手軽にビタミン補給ができて美味しく、冬の勉強のお供に欠かせません。</p>
+          </div>
+        </div>
+        <!-- バドミントン -->
+        <div class="card card-border bg-base-100 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🏸 バドミントン</h3>
+            <p class="text-sm text-base-content/70">思い切りシャトルを打ってコートを走り回ると、良いリフレッシュになります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 最近学んでいること (List) -->
+    <section id="learning" class="bg-base-100 p-6 rounded-box shadow-sm scroll-mt-20">
+      <h2 class="text-2xl font-bold mb-4">最近学んでいること</h2>
+      <ul class="list bg-base-200/50 rounded-box">
+        <li class="list-row py-4 px-4 flex items-center gap-4">
+          <div class="text-2xl">📊</div>
+          <div>
+            <div class="font-bold text-base">KH Coderを用いたテキスト分析</div>
+            <div class="text-sm text-base-content/70">テキストデータから頻出語の抽出や共起ネットワークの可視化を学んでいます。</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4. この授業で作ったもの (Card & Badge) -->
+    <section id="works" class="bg-base-100 p-6 rounded-box shadow-sm scroll-mt-20">
+      <h2 class="text-2xl font-bold mb-4">この授業で作ったもの</h2>
+      <div class="card card-border bg-base-200/60">
+        <div class="card-body">
+          <div class="flex items-center gap-2">
+            <h3 class="card-title text-lg">daisyUI の自己紹介カード</h3>
+            <span class="badge badge-primary">第5回</span>
+          </div>
+          <p class="text-sm text-base-content/70 mt-1">
+            daisyUI のコンポーネント（Hero、Card、Badge など）を組み合わせて作成した自己紹介ページです。
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer footer-center p-4 bg-base-100 text-base-content border-t border-base-300">
+    <aside>
+      <p>© SR 2026</p>
+    </aside>
+  </footer>
+
+</body>
+</html>
